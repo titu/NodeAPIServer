@@ -1,12 +1,12 @@
 /**
- * Created by titu on 9/27/16.
+ * Created by titu on 9/28/16.
  */
 const express = require('express');
 const app = express();
-const route = require('./route');
+const router = require('./router');
 const bodyParser = require('body-parser');
 
-const helper = require('../helper');
+const helper = require('./helper');
 
 app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 helper.database.initialize();
 
-route.initialize(app);
+router.initialize(app);
 
 process.on('uncaughtException', function (err) {
     console.log('Uncaught Exception: ', err);

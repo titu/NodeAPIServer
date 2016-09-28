@@ -1,7 +1,7 @@
 /**
- * Created by titu on 9/27/16.
+ * Created by titu on 9/28/16.
  */
-const userFeature = require('../user');
+const userFeature = require('../feature/user');
 
 let initializeRouter = (app) => {
     userFeature.init(app);
