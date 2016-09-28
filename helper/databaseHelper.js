@@ -5,13 +5,16 @@
 const mongoose = require('mongoose');
 const config = require('../config');
 const databaseSettings = config.databaseSettings;
+const blueBird = require('bluebird');
 
 let initializeDatabase = () => {
 
     let uriString = databaseSettings.getDatabaseUrl(databaseSettings.getDatabaseConfig());
 
+    mongoose.Promise = blueBird;
+
     console.log('Connecting to database on: ', uriString);
-    mongoose.connect('mongodb://' + uriString);
+    mongoose.connect('mongodb://' + uriString, { promiseLibrary: blueBird});
 
     mongoose.connection.on('connected', function () {
         console.log('Connection with database made successfully!');
