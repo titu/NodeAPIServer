@@ -1,0 +1,12 @@
+{
+  "extends": "airbnb-base/legacy",
+  "installedESLint": true,
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "indent": ["warn", 4],
+    "no-underscore-dangle": "off",
+    "max-len": ["warn", 120]
+  }
+}

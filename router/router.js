@@ -1,7 +1,7 @@
 /**
  * Created by titu on 9/28/16.
  */
-const userFeature = require('../feature/user');
+const userFeature = require('../api/user');
 
 let initializeRouter = (app) => {
     userFeature.init(app);
