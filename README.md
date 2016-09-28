@@ -1,2 +1,10 @@
 # NodeAPIServer
- API server build with Node.js with the technologies like ExpressJS as web framework, SenecaJS for micro service, bluebird as promise library, MongoDB as storage.
+
+A Node.js backend API server.  
+
+##Technology stack:
+ 1. Node.js
+ 2. Express.js (Web framework for Node.js)
+ 3. Bluebird (Promise library)
+ 4. MongoDB (Database)
+ 5. Mongoose (ODM)
