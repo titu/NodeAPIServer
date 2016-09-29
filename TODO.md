@@ -1,6 +1,6 @@
  1. ~~A common response handler for success/failure ~~ -- DONE 
- 2. Implement Log like [bunyan](https://www.npmjs.com/package/bunyan)  -- WORK IN PROGRESS
- 3. Request log middleware 
+ 2. ~~Implement Log like [bunyan](https://www.npmjs.com/package/bunyan) ~~ -- DONE
+ 3. Request log middleware  -- WORK IN PROGRESS
  4. Data validation
  5. Authentication to API
  6. Allow CORS
