@@ -1,6 +1,6 @@
 # NodeAPIServer
 
-A Node.js backend API server.  
+A Node.js backend API server. Implemented by following the [Feature based architecture](https://blog.risingstack.com/node-hero-node-js-project-structure-tutorial/). 
 
 ##Technology stack:
  1. Node.js
