@@ -6,30 +6,31 @@ const mongoose = require('mongoose');
 const config = require('../config');
 const databaseSettings = config.databaseSettings;
 const blueBird = require('bluebird');
+const log = require('./log');
 
 let initializeDatabase = () => {
     let uriString = databaseSettings.getDatabaseUrl(databaseSettings.getDatabaseConfig());
 
     mongoose.Promise = blueBird;
 
-    console.log('Connecting to database on: ', uriString);
+    log.info('Connecting to database on: ', uriString);
     mongoose.connect('mongodb://' + uriString, { promiseLibrary: blueBird });
 
-    mongoose.connection.on('connected', function () {
-        console.log('Connection with database made successfully!');
+    mongoose.connection.on('connected', () => {
+        log.info('Connection with database made successfully!');
     });
 
-    mongoose.connection.on('error', function (error) {
-        console.log('Database connection is facing problem: ', error);
+    mongoose.connection.on('error', (error) => {
+        log.error('Database connection is facing problem: ', error);
     });
 
-    mongoose.connection.on('disconnected', function () {
-        console.log('Database is now disconnected.');
+    mongoose.connection.on('disconnected', () => {
+        log.warn('Database is now disconnected.');
     });
 
-    process.on('SIGINT', function () {
-        mongoose.connection.close(function () {
-            console.log('SIGINT: Database disconnected.');
+    process.on('SIGINT', () => {
+        mongoose.connection.close(() => {
+            log.warn('SIGINT: Database disconnected.');
             process.exit(0);
         });
     });
