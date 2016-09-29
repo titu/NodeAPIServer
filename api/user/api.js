@@ -2,7 +2,8 @@
  * Created by titu on 9/27/16.
  */
 const userModel = require('./userModel');
-const responseHelper = require('../../helper').response;
+const helper = require('../../helper');
+const responseHelper = helper.response;
 
 module.exports = {
 

@@ -2,10 +2,12 @@
  * Created by titu on 9/28/16.
  */
 
-let database = require('./database');
-let response = require('./response');
+const database = require('./database');
+const response = require('./response');
+const log = require('./log');
 
 module.exports = {
     database: database,
-    response: response
+    response: response,
+    log: log
 };
