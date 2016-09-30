@@ -14,7 +14,7 @@ app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
 }));
-
+app.use(middleWare.request.log);
 app.use(methodOverride());
 
 helper.database.initialize();
@@ -25,7 +25,7 @@ process.on('uncaughtException', (err) => {
     log.fatal('Uncaught Exception: ', err);
 });
 
-app.use(middleWare.errorMiddleware.logErrors);
-app.use(middleWare.errorMiddleware.handleErrors);
+app.use(middleWare.error.log);
+app.use(middleWare.error.handle);
 
 module.exports = app;
