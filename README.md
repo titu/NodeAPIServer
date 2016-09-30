@@ -8,3 +8,4 @@ A Node.js backend API server. Implemented by following the [Feature based archit
  3. Bluebird (Promise library)
  4. MongoDB (Database)
  5. Mongoose (ODM)
+ 6. Bunyan (Logger)
