@@ -1,8 +1,10 @@
 /**
  * Created by titu on 9/28/16.
  */
-const errorMiddleware = require('./error');
+const error = require('./error');
+const request = require('./request');
 
 module.exports = {
-    errorMiddleware: errorMiddleware
+    error: error,
+    request: request
 };

@@ -3,18 +3,18 @@
  */
 const log = require('../helper').log;
 
-let logErrors = (err, req, res, next) => {
+let logErrors = (error, request, response, next) => {
     log.error(
         'Error in handling request'
-        , { originalUrl: req.originalUrl }
-        , { originalMethod: req.originalMethod }
-        , { error: err }
+        , { originalUrl: request.originalUrl }
+        , { originalMethod: request.originalMethod }
+        , { error: error }
     );
-    next(err);
+    next(error);
 };
 
-let handleErrors = (err, req, res, next) => {
-    res.status(500).json({
+let handleErrors = (error, request, response, next) => {
+    response.status(500).json({
         success: false,
         message: [
             'Error in handling this request. ',
@@ -24,6 +24,6 @@ let handleErrors = (err, req, res, next) => {
 };
 
 module.exports = {
-    logErrors: logErrors,
-    handleErrors: handleErrors
+    log: logErrors,
+    handle: handleErrors
 };
