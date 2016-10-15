@@ -4,12 +4,11 @@
 
 const app = require('./app');
 const port = process.env.PORT || 3000;
+const log = require('./helper/log');
 
 app.listen(port, (err) => {
     if (err) {
-        return console.log('NodeAPIServer could not started. ', err);
+        log.err('NodeAPIServer could not started. ', err);
     }
-    return console.log('NodeAPIServer is running on port: ', port);
+    log.info('NodeAPIServer is running on port: ', port);
 });
-
-
