@@ -10,8 +10,5 @@
     "no-underscore-dangle": "off",
     "max-len": ["warn", 120],
     "linebreak-style": 0
-  }/*,
-  "parserOptions": {
-    "ecmaVersion": 6
-  }*/
+  }
 }

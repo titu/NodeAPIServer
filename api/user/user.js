@@ -2,7 +2,7 @@
  * Created by titu on 9/27/16.
  */
 
-const userModel = require('./userSchema');
+const userModel = require('./model');
 
 module.exports = {
 
@@ -14,14 +14,13 @@ module.exports = {
     },
     create: (userData) => {
         return userModel.create(userData);
-
     },
     update: (userData) => {
-        return userModel.findOneAndUpdate({_id: userData._id}, userData, null);
+        return userModel.findOneAndUpdate({ _id: userData._id }, userData, null);
     },
 
     remove: (userId) => {
-        return userModel.remove({_id: userId});
+        return userModel.remove({ _id: userId });
     }
 
 };
