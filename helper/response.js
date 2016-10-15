@@ -2,6 +2,8 @@
  * Created by titu on 9/29/16.
  */
 
+const _ = require('lodash');
+
 let success = (response, data) => {
     response.status(200).json({
         success: true,
@@ -25,7 +27,9 @@ let failure = (response, err) => {
 
     response.status(status).json({
         success: false,
-        data: message
+        message: _.isObject(message) ? _.map(message, (msg) => {
+            return _.join(msg, ',');
+        }) : message
     });
 };
 

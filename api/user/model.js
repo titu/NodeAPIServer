@@ -11,21 +11,24 @@ let roleEnum = [
 let userSchema = new mongoose.Schema({
     name: {
         first: String,
-        last: {type: String, trim: true}
+        last: { type: String, trim: true }
     },
     email: {
         type: String,
         required: true
     },
-    age: {type: Number, min: 0},
+    birthDate: { type: Date },
     registeredOn: {
         type: Date,
         default: Date.now
     },
+    password: { type: String },
+    confirmPassword: { type: String },
     role: {
         type: String,
         required: true,
-        enum: roleEnum
+        enum: roleEnum,
+        default: 'USER'
     }
 });
 
