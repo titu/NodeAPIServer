@@ -9,3 +9,7 @@ A Node.js backend API server. Implemented by following the [Feature based archit
  4. MongoDB (Database)
  5. Mongoose (ODM)
  6. Bunyan (Logger)
+ 7. Validate.js (Data validation)
+ 8. Lodash (Utility)
+ 9. Moment.js (Date handling)
+ 
